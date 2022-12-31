@@ -23,7 +23,7 @@ class Covid_info_controller extends DB{
         $center =  $post_data['center'];
         $vaccinated_by =  $post_data['vaccinated_by'];
   
-        $sql ="INSERT INTO `covid_info`(`certificate_no`, `nid_no`,`passport_no`,`nationality`,`name`,`date_of_birth`,`gender`,`dose_first`,`dose_first_date`,`dose_second`,`dose_second_date`,`dose_third`,`dose_third_date`,`total_dose`,`center`,`vaccinated_by`,`uniq_id`) VALUES(:certificate_no,:nid_no,:passport_no,:nationality,:name,:date_of_birth,:gender,:dose_first,:dose_first_date,:dose_second,:dose_second_date,:dose_third,:dose_third_date,:total_dose,:center,:vaccinated_by,:uniq_id)";
+        $sql ="INSERT INTO `covid_info`(`certificate_no`, `nid_no`,`passport_no`,`nationality`,`name`,`date_of_birth`,`gender`,`dose_first`,`dose_first_date`,`dose_second`,`dose_second_date`,`dose_third`,`dose_third_date`,`total_dose`,`center`,`vaccinated_by`) VALUES(:certificate_no,:nid_no,:passport_no,:nationality,:name,:date_of_birth,:gender,:dose_first,:dose_first_date,:dose_second,:dose_second_date,:dose_third,:dose_third_date,:total_dose,:center,:vaccinated_by)";
         $stmt= $this->CON->prepare($sql);
         $stmt->execute(['certificate_no'=>$certificate_no,'nid_no'=>$nid_no,'passport_no'=>$passport_no,'nationality'=>$nationality,'name'=>$name,
         'date_of_birth'=>$date_of_birth,'gender'=>$gender,'dose_first'=>$dose_first,'dose_first_date'=>$dose_first_date,'dose_second'=>$dose_second,'dose_second_date'=>$dose_second_date,'dose_third'=>$dose_third,'dose_third_date'=>$dose_third_date,'total_dose'=>$total_dose,'center'=>$center,'vaccinated_by'=>$vaccinated_by]);
